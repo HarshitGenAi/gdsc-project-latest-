@@ -1,0 +1,64 @@
+<!--
+  DevBlog - index.html
+  Single-file entry for the DevBlog SPA (loads JS modules as plain scripts).
+  Uses Google Font "Inter". Works by opening index.html in a modern browser.
+-->
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0ea5a4" />
+  <title>DevBlog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a id="logo" class="site-title" href="#/home" aria-label="DevBlog Home">DevBlog</a>
+
+        <div class="header-center">
+          <input id="search-input" class="search" type="search" placeholder="Search posts..." aria-label="Search posts" />
+        </div>
+
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <div id="nav-links" class="nav-links">
+            <!-- dynamic -->
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="container main-content" role="main" tabindex="-1">
+      <!-- Views will render here -->
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <small>DevBlog • Frontend SPA demo</small>
+        </div>
+        <div class="footer-actions">
+          <button id="reset-data" class="btn btn-ghost" title="Reset demo data">Reset demo data</button>
+          <button id="toggle-theme" class="btn btn-ghost" title="Toggle theme">Toggle Theme</button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast container -->
+    <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  </div>
+
+  <!-- Scripts (plain old script tags; no modules to avoid local file CORS issues) -->
+  <script src="storage.js"></script>
+  <script src="ui.js"></script>
+  <script src="auth.js"></script>
+  <script src="posts.js"></script>
+  <script src="router.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
